@@ -1,0 +1,20 @@
+.validation-message {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    .thank-you-sigup {
+        font-size: 1.4em;
+    }
+    .email-signup {
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+    p {
+        width : 60%;
+    }
+    a {
+        margin-top: 40px;
+    }
+}

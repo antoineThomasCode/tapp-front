@@ -1,0 +1,62 @@
+
+.App {
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 30px;
+        a:nth-child(2){
+        text-decoration: none;
+        font-weight: bold;
+        color: #2c3e50;
+        i {
+            margin-right: 10px;
+        }
+        &:hover {
+            text-decoration: underline;
+            cursor: pointer; 
+        }
+      }
+      .header-buttons {
+        display: flex;
+        column-gap: 10px;
+      }
+      div > button, div > div {
+        font-weight: bold;
+        border: none;
+        background-color: transparent;
+        color: #2c3e50;
+        font-size: 1em;
+        i {
+          margin-right: 10px;
+        }
+      }
+      div > button:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+      img {
+        height: 80px;
+      }
+      h1{
+        display: none;
+        }
+      }
+      footer {
+        border-top: 2px solid #ccc;
+        display: flex;
+        justify-content: center;
+        padding: 20px 0;
+      }
+  } 
+@media screen and (max-width: 700px) {
+    .App {
+        header {
+            padding: 0 20px;
+            img {
+                height: 40px;
+                }
+        }
+    }
+}

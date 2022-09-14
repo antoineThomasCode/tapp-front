@@ -1,0 +1,24 @@
+.changeNameModale {
+    display: flex;
+    flex-wrap: wrap;
+    .changeNameForm {
+        display: flex;
+        column-gap: 20px;
+        flex-wrap: wrap;
+        flex-basis: 100%;
+        justify-content: center;
+    }
+    label {
+        display: none;
+    }
+    .cta-buttons {
+        display: flex;
+        column-gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+        flex-basis: 100%;
+    }
+    .input-wrapper input {
+        height: 30px; 
+    }
+}

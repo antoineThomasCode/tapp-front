@@ -1,0 +1,10 @@
+.userProfile-container {
+    display: flex;
+    row-gap: 30px;
+    flex-wrap: wrap;
+    flex-basis: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
+    justify-content: center;
+    position: relative;
+}
