@@ -28,23 +28,25 @@ function LoginForm () {
         
         const postApi = async () => {
             const bodyPost = {
-                email : userName,
+                username : userName,
                 password : password
               }
             const response = await requestHandler({
-                url: `${baseUrl}/user/login/`,
+                url: `${baseUrl}auth/login`,
                 method: 'POST',
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify(bodyPost),
                 errMsg: 'Fail to login ! Please Retry.'
             });
+            
             if (response.status === 200) {
-                setErrorLogin(true) 
-                dispatch(startSession(response?.body?.token));
-                navigate("/profile");
+                dispatch(startSession(response));
+                console.log(response)
+                navigate(`/${response.role}`);
             } else {
                 setErrorLogin(true)
-                toast.error('Password not correct !')
+                toast.error("Personnel non autorisé")
+                
             }
         };
         postApi();

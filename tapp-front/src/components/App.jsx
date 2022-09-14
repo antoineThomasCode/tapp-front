@@ -8,19 +8,28 @@ import Footer from "../components/Generic/Footer";
 import Login from '../pages/login/Login'
 import Redirection from "../pages/NotFound/Redirection";
 import Home from "../pages/homePage/Home"
-import UserProfile from "../pages/userProfil/UserProfile";
+
 import SignUp from "../pages/SignUp/SignUp";
 import {useSelector} from "react-redux"
+import Patron from "../pages/Patron/Patron";
+import Tractorist from "../pages/tractorist/tractorist";
+import Secretaire from "../pages/secretaire/secretaire";
 
 function App() {
   const isLogged = useSelector((state) => state.login.isConnected)
+  const isBoss = useSelector((state) => state.login.role) === 'patron'
+  const isTractorist = useSelector((state) => state.login.role) === 'tractoriste'
+  const isSecretaire = useSelector((state) => state.login.role) === 'secretaire'
+
   return (
       <div className="App">
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/profile" element={ isLogged ? (<UserProfile />) : <Login />} />
+          <Route path="/patron" element={ isBoss && isLogged ? (<Patron />) : <Login />} />
+          <Route path="/tractoriste" element={ isTractorist && isLogged ? (<Tractorist />) : <Login />} />
+          <Route path="/secretaire" element={ isSecretaire && isLogged ? (<Secretaire />) : <Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="*" element={<Redirection />} />
         </Routes>
